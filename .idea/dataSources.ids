@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="iou dev" uuid="9331929c-abe4-4976-b9b9-494e77013d4c">
+    <database-info product="MySQL" version="5.5.44-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.29 ( Revision: alexander.soklakov@oracle.com-20140120140810-s44574olh90i6i4l )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="iou"/>
+    <table name="bill" schema="" catalog="iou" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="description" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="total_bill" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_sekpmoaf95er9ikrc21mqudxm" table="user_bill" schema="" catalog="iou" columns="bill_id"/>
+    </table>
+    <table name="message" schema="" catalog="iou" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="body" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_created" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="sent_by_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="sub" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_mylu2hcyctdc852m5wasoe9kx" columns="sent_by_id" ref-table="user" ref-schema="" ref-catalog="iou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_mylu2hcyctdc852m5wasoe9kx" unique="false" columns="sent_by_id"/>
+    </table>
+    <table name="reset_password" schema="" catalog="iou" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="access_token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="userid" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="user" schema="" catalog="iou" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="version" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="date_created" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_updated" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="money_due" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="money_owed" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="token" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="username" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_mylu2hcyctdc852m5wasoe9kx" table="message" schema="" catalog="iou" columns="sent_by_id"/>
+      <exported-key name="FK_b4iqikird7kbtj4nw9erwjp8" table="user_bill" schema="" catalog="iou" columns="user_id"/>
+      <exported-key name="FK_mps81qti05d9he0y66y5jt845" table="user_group" schema="" catalog="iou" columns="user_id"/>
+      <exported-key name="FK_mkovi37gqcn1a59q0qylfi1ef" table="user_user" schema="" catalog="iou" columns="user_friends_id"/>
+      <exported-key name="FK_s7pwk9swjfqs0w7ub9tt5s47y" table="user_user" schema="" catalog="iou" columns="user_id"/>
+      <index name="UK_ob8kqyqqgmefl0aco34akdtpe" unique="true" columns="email"/>
+      <index name="UK_sb8bbouer5wak8vyiiy4pf2bx" unique="true" columns="username"/>
+    </table>
+    <table name="user_bill" schema="" catalog="iou" type="TABLE">
+      <column name="bill_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="user_id,bill_id"/>
+      <foreign-key name="FK_b4iqikird7kbtj4nw9erwjp8" columns="user_id" ref-table="user" ref-schema="" ref-catalog="iou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_sekpmoaf95er9ikrc21mqudxm" columns="bill_id" ref-table="bill" ref-schema="" ref-catalog="iou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_sekpmoaf95er9ikrc21mqudxm" unique="false" columns="bill_id"/>
+    </table>
+    <table name="user_group" schema="" catalog="iou" type="TABLE">
+      <column name="group_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="user_id,group_id"/>
+      <foreign-key name="FK_mps81qti05d9he0y66y5jt845" columns="user_id" ref-table="user" ref-schema="" ref-catalog="iou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="user_user" schema="" catalog="iou" type="TABLE">
+      <column name="user_friends_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <foreign-key name="FK_mkovi37gqcn1a59q0qylfi1ef" columns="user_friends_id" ref-table="user" ref-schema="" ref-catalog="iou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_s7pwk9swjfqs0w7ub9tt5s47y" columns="user_id" ref-table="user" ref-schema="" ref-catalog="iou" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_mkovi37gqcn1a59q0qylfi1ef" unique="false" columns="user_friends_id"/>
+      <index name="FK_s7pwk9swjfqs0w7ub9tt5s47y" unique="false" columns="user_id"/>
+    </table>
+  </data-source>
+</component>

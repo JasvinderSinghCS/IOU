@@ -1,0 +1,13 @@
+HTTrack3.48-19+htsswf+htsjava launched on Fri, 19 Jun 2015 09:41:57 at http://www.bootply.com/render/85861 +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://www.bootply.com/render/85861 -O1 "D:\websites\mukul dashboard" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+09:41:59	Warning: 	Note: due to www.bootply.com remote robots.txt rules, links beginning with these path will be forbidden: /like, /search (see in the options to disable this)
+09:42:28	Warning: 	Retry after error -4 (No data (connection closed)) at link www.bootply.com/bootply_ico.jpg (from www.bootply.com/bootstrap/img/apple-touch-icon.png)
+
+HTTrack Website Copier/3.48-19 mirror complete in 32 seconds : 55 links scanned, 53 files written (1635272 bytes overall) [786913 bytes received at 24591 bytes/sec], 1181115 bytes transferred using HTTP compression in 28 files, ratio 26%, 2.2 requests per connection
+(No errors, 2 warnings, 0 messages)

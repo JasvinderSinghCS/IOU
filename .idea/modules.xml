@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/iou.iml" filepath="$PROJECT_DIR$/iou.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iou-grailsPlugins.iml" filepath="$PROJECT_DIR$/iou-grailsPlugins.iml" />
+    </modules>
+  </component>
+</project>

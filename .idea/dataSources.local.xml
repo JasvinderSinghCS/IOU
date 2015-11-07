@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="iou dev" uuid="9331929c-abe4-4976-b9b9-494e77013d4c">
+      <user-name>root</user-name>
+      <user-password>dfcedfcbdfdedfcbdfc8dfcbdfd9dfcf</user-password>
+      <schema-pattern>iou.*</schema-pattern>
+      <default-schemas>iou.*</default-schemas>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,1 @@
+<span class="list-group-item"><i class="fa fa-fw fa-list-alt"></i>${bills.description} ${bills.totalBill}</span>
